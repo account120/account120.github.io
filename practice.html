@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/main.css">
+		<title>Turkish</title>
+	</head>
+	<body>
+		<!--Navigation bar-->
+		<nav>
+			<p class="navtext">Learn Turkish</p>
+			<a href="index.html" class="navbut">Home</a>
+			<a href="pronunciation.html" class="navbut">Pronunciation</a>
+			<a href="order.html" class="navbut">Word Order</a>
+			<a href="vowelharmony.html" class="navbut">Vowel Harmony</a>
+			<a href="conjugation.html" class="navbut">Conjugation</a>
+			<a href="markers.html" class="navbut">Markers</a>
+			<a href="tenses.html" class="navbut">Tenses</a>
+			<a href="moods.html" class="navbut">Moods</a>
+			<a href="cases.html" class="navbut">Cases</a>
+			<a href="practice.html" class="navbut">Practice</a>
+			<a href="secret.html" class="navbut">???</a>
+		</nav>
+
+		<!--Denfinition box, ignore.-->
+		<p class="def" id="defpopup">Definition not found</p>
+		<!--Welcome-->
+		<div class="bannerdiv">
+			<img src="images/turkiye.png" class="banner">
+		</div>
+		<h1>Practice</h1>
+		<br><br><br><br><br>
+		<h3>Practice the concepts you learned from previous pages<br>If random capitalized symbols that do not appear in Turkish appear, reload the page.</h2>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+		<center>
+			<button id="vocab" onclick="practice(this.id)" class="pbtn">Practice</button>
+		</center>
+		<div class="game" id="game">
+			<div class="screen">
+				<center><p class="screentext" id="question">Blork</p></center>
+				<center><img src="" id="pimg" class="pimg"></center>
+			</div>
+			<center><p class="gametext">Type your response in the box below, use the buttons under it to add accented letters.</p></center>
+			<center><p class="feedback" id="fb">Incorrect, check your spelling and accents.</p></center>
+			<center><textarea id="inp" class="txtinp" placeholder="örnek"></textarea></center>
+			<br>
+			<center>
+				<button class="accentbutton" value="ü" onclick="accent(this.value)">Ü</button>
+				<button class="accentbutton" value="ö" onclick="accent(this.value)">Ö</button>
+				<button class="accentbutton" value="ı" onclick="accent(this.value)">I</button>
+				<button class="accentbutton" value="İ" onclick="accent(this.value)">İ</button>
+				<button class="accentbutton" value="â" onclick="accent(this.value)">Â</button>
+				<button class="accentbutton" value="ç" onclick="accent(this.value)">Ç</button>
+				<button class="accentbutton" value="ş" onclick="accent(this.value)">Ş</button>
+				<button class="accentbutton" value="ğ" onclick="accent(this.value)">Ğ</button>
+			</center>
+			<br>
+			<center><button onclick="checkans()">Submit</button></center>
+			<button id="r" onclick="endpractice(this.id)">End Practice</button>
+		</div>
+		<!--Scripts-->
+		<script src="js/qol.js"></script>
+	</body>
+</html>
