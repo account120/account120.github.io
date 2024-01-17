@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/main.css">
+		<title>Turkish</title>
+	</head>
+	<body>
+		<!--Navigation bar-->
+		<nav>
+			<p class="navtext">Learn Turkish</p>
+			<a href="index.html" class="navbut">Home</a>
+			<a href="pronunciation.html" class="navbut">Pronunciation</a>
+			<a href="order.html" class="navbut">Word Order</a>
+			<a href="vowelharmony.html" class="navbut">Vowel Harmony</a>
+			<a href="conjugation.html" class="navbut">Conjugation</a>
+			<a href="markers.html" class="navbut">Markers</a>
+			<a href="tenses.html" class="navbut">Tenses</a>
+			<a href="moods.html" class="navbut">Moods</a>
+			<a href="cases.html" class="navbut">Cases</a>
+		</nav>
+
+		<!--Denfinition box, ignore.-->
+		<p class="def" id="defpopup">Definition not found</p>
+		<!--Welcome-->
+		<h4 style="font-size: 60px;">Dictionary</h4>
+        
+		<center>
+			<input type="text" placeholder="Type English or Turkish..." class="txtinp" onkeyup="search(this.value, this.name)" name="1">
+			<p id="noresults" style="display: none;">Sorry, no results were found.</p>
+			<br><br>
+			<button id="nx" style="display: none;" onclick="next()">Next</button>
+		</center>
+		<br>
+		<div id="result" class="item">
+			<p id="amt">Result #1 of 1</p>
+			<h4 class="itmname" id="sname">A</h4>
+			<p id="pos">verb</p>
+			<p id="sdesc">Description</p>
+			<center>
+				<table id="noun" style="display: none;">
+					<tr>
+						<th></th>
+						<th>Singular</th>
+						<th>Plural</th>
+					</tr>
+					<tr>
+						<th>Accusative Definite</th>
+						<td id="a1"></td>
+						<td id="a2"></td>
+					</tr>
+					<tr>
+						<th>Dative</th>
+						<td id="a3"></td>
+						<td id="a4"></td>
+					</tr>
+					<tr>
+						<th>Locative</th>
+						<td id="a5"></td>
+						<td id="a6"></td>
+					</tr>
+					<tr>
+						<th>Ablative</th>
+						<td id="a7"></td>
+						<td id="a8"></td>
+					</tr>
+					<tr>
+						<th>Genitive</th>
+						<td id="a9"></td>
+						<td id="a10"></td>
+					</tr>
+					<tr>
+						<th>Instrumental</th>
+						<td id="a11"></td>
+						<td id="a12"></td>
+					</tr>
+				</table>
+				<table id="verb" style="display: none;">
+					<tr>
+						<th rowspan="2"></th>
+						<th colspan="2">Present</th>
+						<th colspan="2">Past</th>
+						<th rowspan="2" id="do">Future</th>
+					</tr>
+					<tr>
+						<th>Aorist</th>
+						<th>Imperfective</th>
+						<th>Imperfective</th>
+						<th>Perfective</th>
+					</tr>
+					<tr>
+						<th>Ben (I)</th>
+						<td id="b1"></td>
+						<td id="b2"></td>
+						<td id="b3"></td>
+						<td id="b4"></td>
+						<td id="b5"></td>
+					</tr>
+					<tr>
+						<th>Sen (You)</th>
+						<td id="b6"></td>
+						<td id="b7"></td>
+						<td id="b8"></td>
+						<td id="b9"></td>
+						<td id="b10"></td>
+					</tr>
+					<tr>
+						<th>O (He/She/It)</th>
+						<td id="b11"></td>
+						<td id="b12"></td>
+						<td id="b13"></td>
+						<td id="b14"></td>
+						<td id="b15"></td>
+					</tr>
+					<tr>
+						<th>Biz (We)</th>
+						<td id="b16"></td>
+						<td id="b17"></td>
+						<td id="b18"></td>
+						<td id="b19"></td>
+						<td id="b20"></td>
+					</tr>
+					<tr>
+						<th>Siz (You(plural))</th>
+						<td id="b21">Yersiniz</td>
+						<td id="b22">Yiyorsunuz</td>
+						<td id="b23">Yediniz</td>
+						<td id="b24">Yiyordunuz</td>
+						<td id="b25">Yiyeceksiniz</td>
+					</tr>
+					<tr>
+						<th>Onlar (They)</th>
+						<td id="b26"></td>
+						<td id="b27"></td>
+						<td id="b28"></td>
+						<td id="b29">Yiyorlardı</td>
+						<td id="b30">Yiyecekler</td>
+					</tr>
+				</table>
+			</center>
+			<br>
+		</div>
+        
+		<!--Scripts-->
+		<script src="js/dict.js"></script>
+	</body>
+</html>

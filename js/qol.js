@@ -4,16 +4,17 @@ const ydistance = 30;
 let game;
 let ans;
 let qnum;
+let attempts = 0;
 const q = [
-	["çocuk", "child.jpg", "What is in this picture?"], 
-	["türkiye", "turkiye1.jpg", "What is the name of the country this flag comes from?"], 
-	["türkçe", "turkiye1.jpg", "What is the language turkiye speaks?"],
-	["an apple from the man", "apple1.jpg", "Translate this to English:\nAdamdan bir elma"],
-	["Adam bir elma yer", "apple2.jpg", "Translate this to Turkish:\nThe man eats an apple"],
-	["tan", "child1.jpg", "What is the correctly harmonized form of the ablative case marker for this word:\nçocuk"],
-	["çocuğu", "child.jpg", "Write the accusative definite case of this word:\nçocuk"],
-	["gitmeli", "leave.jpg", "Find the misspelled word in this sentence and respond with the corrected word(just put the word that was corrected and nothing else):\ngitmali miyim?"],
-	["tavuğu yenildi", "chicken.jpg", "Translate this to Turkish:\nThe chicken was eaten"]
+	["çocuk", "child.jpg", "What is in this picture?", "Consult a Turkish dictionary."], 
+	["türkiye", "turkiye1.jpg", "What is the name of the country this flag comes from?", "Consult a Turkish dictionary/"], 
+	["türkçe", "turkiye1.jpg", "What is the language turkiye speaks?", "Check the consonant harmony page"],
+	["an apple from the man", "apple1.jpg", "Translate this to English:\nAdamdan bir elma", "Check the noun cases and word order pages"],
+	["Adam bir elma yer", "apple2.jpg", "Translate this to Turkish:\nThe man eats an apple", "Check the word order and conjugation pages"],
+	["tan", "child1.jpg", "The ablative case marker for this word:\nçocuk", "Check the noun cases page"],
+	["çocuğu", "child.jpg", "Write the accusative definite case of this word:\nçocuk", "check the noun cases and consonant harmony pages"],
+	["gitmeli", "leave.jpg", "Correct the misspelling:\ngitmali miyim?", "check the moods page"],
+	["tavuğu yenildi", "chicken.jpg", "Translate this to Turkish:\nThe chicken was eaten", "check the moods, consonant harmony, conjugation, and tenses pages"]
 ]
 
 for (const wd of wds)
@@ -76,6 +77,7 @@ function displayquestion(num) {
 	ans = q[num-1][0];
 	img.setAttribute("src", `images/${q[num-1][1]}`);
 	question.innerText = `${q[num-1][2]}\n(Question#${qnum})`;
+	attempts = 0;
 }
 
 function checkans() {
@@ -97,7 +99,14 @@ function checkans() {
 		}
 	}
 	else {
-		fb.innerText = "Incorrect.";
+		if (attempts >= 3)
+		{
+			fb.innerText = `Hint:${q[qnum-1][3]}`;
+		}
+		else {
+			fb.innerText = "Incorrect.";
+		}
+		attempts += 1;
 		fb.style.display = "block";
 	}
 }
