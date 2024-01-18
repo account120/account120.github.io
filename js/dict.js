@@ -23,10 +23,22 @@ const items = [
     ],
     [
         "Yemek(ğ)", "food", "1. Food\n2. Dinner\nThis is the noun version of Yemek, which is also the verb for 'to eat.'", 
-        ["Yemeği", "Yemekleri", "Yemeğe", "Yemeklere", "Yemekta", "Yemeklerde", "Yemektan", "Yemeklerden", "Yemeğin", "Yemeklerin", "Yemekle", "Yemeklerle"],
+        ["Yemeği", "Yemekleri", "Yemeğe", "Yemeklere", "Yemekte", "Yemeklerde", "Yemektan", "Yemeklerden", "Yemeğin", "Yemeklerin", "Yemekle", "Yemeklerle"],
         "noun"
     ],
+    [
+        "örnek(ğ)", "example", "1. example\n2.specimen", 
+        ["örneği", "örnekleri", "örneğe", "örneklere", "örnekte", "örneklerde", "örnektan", "örneklerden", "örneğin", "örneklerin", "örnekle", "örneklerle"],
+        "noun"
+    ],
+    [
+        "kedi", "cat", "Kedi is the Turkish word for cat", 
+        ["kediyi", "kedileri", "kediye", "kedilere", "kedide", "kedilerde", "kedidan", "kedilerden", "kediyin", "kedilerin", "kediyle", "kedilerle"],
+        "noun"
+    ]
 ];
+const total = document.getElementById("total");
+total.innerText = `${items.length} words in total`;
 
 let found = [];
 let iamt = 0;
@@ -121,4 +133,12 @@ function next() {
         itemnum = 1;
     }
     displayresult(itemnum);
+}
+
+function accent(val) {
+    const bar = document.getElementById("searchb");
+    bar.value += val;
+    console.log(bar.value.normalize('NFD'));
+    search(bar.value, 1);
+    //.replace(/[\u0300-\u036f]/g, "");
 }

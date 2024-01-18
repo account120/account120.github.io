@@ -6,11 +6,10 @@
 	<body>
 		<!--Navigation bar-->
 		<nav>
-			<p class="navtext">Learn Turkish</p>
-			<a href="index.html" class="navbut">Home</a>
+			<a href="index.html" class="navtext">Learn Turkish</a>
 			<a href="pronunciation.html" class="navbut">Pronunciation</a>
-			<a href="order.html" class="navbut">Word Order</a>
-			<a href="vowelharmony.html" class="navbut">Vowel Harmony</a>
+			<a href="order.html" class="navbut">Order</a>
+			<a href="vowelharmony.html" class="navbut">Harmony</a>
 			<a href="conjugation.html" class="navbut">Conjugation</a>
 			<a href="markers.html" class="navbut">Markers</a>
 			<a href="tenses.html" class="navbut">Tenses</a>
@@ -21,10 +20,22 @@
 		<!--Denfinition box, ignore.-->
 		<p class="def" id="defpopup">Definition not found</p>
 		<!--Welcome-->
-		<h4 style="font-size: 60px;">Dictionary</h4>
+		<h4 style="font-size: 60px;">Small Dictionary</h4>
         
 		<center>
-			<input type="text" placeholder="Type English or Turkish..." class="txtinp" onkeyup="search(this.value, this.name)" name="1">
+			<p id="total" style="font-size: 30px;"></p>
+			<input type="text" placeholder="Type English or Turkish..." class="txtinp" onkeyup="search(this.value, this.name)" name="1" id="searchb">
+			<br><br>
+			<center>
+				<button class="accentbutton" value="ü" onclick="accent(this.value)">Ü</button>
+				<button class="accentbutton" value="ö" onclick="accent(this.value)">Ö</button>
+				<button class="accentbutton" value="ı" onclick="accent(this.value)">I</button>
+				<button class="accentbutton" value="İ" onclick="accent(this.value)">İ</button>
+				<button class="accentbutton" value="â" onclick="accent(this.value)">Â</button>
+				<button class="accentbutton" value="ç" onclick="accent(this.value)">Ç</button>
+				<button class="accentbutton" value="ş" onclick="accent(this.value)">Ş</button>
+				<button class="accentbutton" value="ğ" onclick="accent(this.value)">Ğ</button>
+			</center>
 			<p id="noresults" style="display: none;">Sorry, no results were found.</p>
 			<br><br>
 			<button id="nx" style="display: none;" onclick="next()">Next</button>
