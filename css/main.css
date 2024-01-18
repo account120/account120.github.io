@@ -300,6 +300,7 @@ nav:last-child() {
 }
 
 .navtext:hover {
+
 	position: absolute;
 	margin-top: -0.1px;
 	color: red;
